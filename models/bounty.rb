@@ -75,8 +75,8 @@ class Bounty
     values = [name]
     db.prepare("find_name", sql)
     named_entry = db.exec_prepared("find_name", values)
-    db.close()
     named_entry.count > 0 ? named_entry[0] : nil
+    db.close()
   end
 
   def Bounty.find_id(id)
@@ -86,8 +86,8 @@ class Bounty
     values = [id]
     db.prepare("find_id", sql)
     queried_id = db.exec_prepared("find_id", values)
-    db.close()
     queried_id.count > 0 ? queried_id[0] : nil
+    db.close()
   end
 
 end
